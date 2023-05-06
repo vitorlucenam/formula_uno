@@ -7,7 +7,6 @@ import MenuScreen from '../pages/MenuScreen';
 
 const Tab = createBottomTabNavigator();
 
-
 const MyTabs = () => (
     <Tab.Navigator>
       <Tab.Screen name="Home" component={HomeScreen} />
