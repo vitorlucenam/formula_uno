@@ -1,10 +1,10 @@
 import * as React from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, StyleSheet } from 'react-native';
+import SimpleCardCarousel from '../components/netflix-simple-carousel';
 
-
-const HomeScreen = (navigation) => (
+const HomeScreen = () => (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Nova home no arquivo!</Text>
+        <SimpleCardCarousel />
     </View>
 );
 
