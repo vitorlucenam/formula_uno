@@ -9,13 +9,13 @@ import {
 
 const OFFSET = 40
 const ITEM_WIDTH = Dimensions.get("window").width - (OFFSET * 2)
-const ITEM_HEIGHT = 200
+const ITEM_HEIGHT = 312
 
 const cards = [
-  { title: "Car 1", posterUrl: require("../images/img01.jpeg") },
-  { title: "Car 2", posterUrl: require("../images/img02.jpeg") },
-  { title: "Car 3", posterUrl: require("../images/img03.jpeg") },
-  { title: "Car 4", posterUrl: require("../images/img04.jpeg") },
+  { id: "01", title: "Car 1", posterUrl: require("../images/img01.jpeg") },
+  { id: "02", title: "Car 2", posterUrl: require("../images/img02.jpeg") },
+  { id: "03", title: "Car 3", posterUrl: require("../images/img03.jpeg") },
+  { id: "04", title: "Car 4", posterUrl: require("../images/img04.jpeg") },
 ]
 
 export default function AdvancedCardCarousel() {
@@ -28,8 +28,8 @@ export default function AdvancedCardCarousel() {
         decelerationRate={"normal"}
         snapToInterval={ITEM_WIDTH}
         style={{ marginTop: 40, paddingHorizontal: 0 }}
-        showsHorizontalScrollIndicator={false}
-        bounces={false}
+        showsHorizontalScrollIndicator={true}
+        bounces={true}
         disableIntervalMomentum
         onScroll={Animated.event(
           [{ nativeEvent: { contentOffset: { x: scrollX } } }],
