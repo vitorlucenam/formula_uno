@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, ImageBackground, FlatList, SafeAreaView, StyleSheet } from 'react-native';
+import { View, Text, ImageBackground, FlatList, SafeAreaView, StyleSheet, StatusBar } from 'react-native';
 import axios from 'axios';
 
 
@@ -52,21 +52,29 @@ const PilotsRanking = () => {
   }, []);
 
   return (
-    <SafeAreaView style={styles.container}>
-      <FlatList
-        data={data}
-        renderItem={({item}) => (
-          <Item title={`${item.driver.abbr}`} pilotUrl={item.driver.image} />
-        )}
-        keyExtractor={item => item.driver.id}
-        horizontal={true}
-      />
-    </SafeAreaView>
+    <View style={styles.container}>
+        <SafeAreaView>
+        <FlatList
+            data={data}
+            renderItem={({item}) => (
+            <Item title={`${item.driver.abbr}`} pilotUrl={item.driver.image} />
+            )}
+            keyExtractor={item => item.driver.id}
+            horizontal={true}
+        />
+        </SafeAreaView>
+    </View>
+
   );
 };
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flexDirection: 'row', 
+    flexWrap: 'wrap', 
+    alignItems: 'flex-start',
+    backgroundColor: 'black',
+    marginTop:8,
+
   },
   item: {
     backgroundColor: 'steelblue',
@@ -76,6 +84,7 @@ const styles = StyleSheet.create({
     height: 80,
     borderRadius: 20,
     overflow: "hidden", // definir overflow para a imagem ficar dentro do container
+    
   },
   title: {
     fontSize: 16,

@@ -4,9 +4,8 @@ import AdvancedCardCarousel from '../components/netflix-simple-carousel';
 import PilotsRanking from '../components/PilotsRankingComponent';
 
 const HomeScreen = () => (
-    <View style={{ flex: 4, justifyContent: 'center', alignItems: 'center' }}>
+    <View style={{ flex: 1,flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
         <AdvancedCardCarousel />
-        <PilotsRanking />
         <PilotsRanking />
     </View>
 );

@@ -9,7 +9,7 @@ import {
 
 const OFFSET = 40
 const ITEM_WIDTH = Dimensions.get("window").width - (OFFSET * 2)
-const ITEM_HEIGHT = 312
+const ITEM_HEIGHT = 280
 
 const cards = [
   { id: "01", title: "Car 1", posterUrl: require("../images/img01.jpeg") },
