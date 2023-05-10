@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, ImageBackground, FlatList, SafeAreaView, StyleSheet, StatusBar } from 'react-native';
 import axios from 'axios';
 
+import rankingDrivers from '../mock/rankingDrivers.json';
+
+
 
 type ItemProps = {
   title: string;
@@ -28,27 +31,31 @@ const Item = ({title, pilotUrl}: ItemProps) => (
 const PilotsRanking = () => {
   const [data, setData] = useState([]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(
-          'https://v1.formula-1.api-sports.io/rankings/drivers',
-          {
-            params: {
-              season: 2023,
-            },
-            headers: {
-              'x-apisports-key': '0186eb79ec805c55c8a051b81003a8a3', // replace with your API key
-            },
-          },
-        );
-        setData(response.data.response);
-      } catch (error) {
-        console.error(error);
-      }
-    };
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await axios.get(
+  //         'https://v1.formula-1.api-sports.io/rankings/drivers',
+  //         {
+  //           params: {
+  //             season: 2023,
+  //           },
+  //           headers: {
+  //             'x-apisports-key': '', // replace with your API key
+  //           },
+  //         },
+  //       );
+  //       setData(response.data.response);
+  //     } catch (error) {
+  //       console.error(error);
+  //     }
+  //   };
 
-    fetchData();
+  //   fetchData();
+  // }, []);
+
+  useEffect(() => {
+    setData(rankingDrivers.response);
   }, []);
 
   return (
