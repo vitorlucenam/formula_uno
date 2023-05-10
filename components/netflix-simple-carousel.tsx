@@ -9,25 +9,25 @@ import {
 
 const OFFSET = 40
 const ITEM_WIDTH = Dimensions.get("window").width - (OFFSET * 2)
-const ITEM_HEIGHT = 280
+const ITEM_HEIGHT = 220
 
 const cards = [
-  { id: "01", title: "Car 1", posterUrl: require("../images/img01.jpeg") },
-  { id: "02", title: "Car 2", posterUrl: require("../images/img02.jpeg") },
-  { id: "03", title: "Car 3", posterUrl: require("../images/img03.jpeg") },
-  { id: "04", title: "Car 4", posterUrl: require("../images/img04.jpeg") },
+  { key: "01", title: "Car 1", posterUrl: require("../images/img01.jpeg") },
+  { key: "02", title: "Car 2", posterUrl: require("../images/img02.jpeg") },
+  { key: "03", title: "Car 3", posterUrl: require("../images/img03.jpeg") },
+  { key: "04", title: "Car 4", posterUrl: require("../images/img04.jpeg") },
 ]
 
 export default function AdvancedCardCarousel() {
   const scrollX = React.useRef(new Animated.Value(0)).current
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: "white" }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: "white"}}>
       <ScrollView
         horizontal={true}
         decelerationRate={"normal"}
         snapToInterval={ITEM_WIDTH}
-        style={{ marginTop: 40, paddingHorizontal: 0 }}
+        style={{ marginTop: 24, paddingHorizontal: 0 }}
         showsHorizontalScrollIndicator={true}
         bounces={true}
         disableIntervalMomentum
@@ -66,12 +66,13 @@ export default function AdvancedCardCarousel() {
               }}
             >
               <ImageBackground
+                key={item.key} // adicione a prop "key" aqui
                 source={item.posterUrl}
                 style={{
                   flex: 1,
                   justifyContent: "center",
                 }}
-                imageStyle={{ borderRadius: 6}}
+                imageStyle={{ borderRadius: 24}}
               />
             </Animated.View>
           )

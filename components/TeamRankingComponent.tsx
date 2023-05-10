@@ -22,7 +22,6 @@ const Item = ({title, teamUrl}: ItemProps) => (
       }}
       imageStyle={{ borderRadius: 6}}
     >
-      <Text style={styles.title}>{title}</Text>
     </ImageBackground>
   </View>
 );
@@ -79,19 +78,17 @@ const styles = StyleSheet.create({
     flexDirection: 'row', 
     flexWrap: 'wrap', 
     alignItems: 'flex-start',
-    backgroundColor: 'black',
-    marginTop:8,
-
+    backgroundColor: '#CFD8DC',
   },
   item: {
-    backgroundColor: 'steelblue',
+    backgroundColor: '#ECEFF1',
     marginVertical: 8,
     marginHorizontal: 8,
-    width: 80,
-    height: 80,
-    borderRadius: 20,
+    width: 172,
+    height: 100,
+    borderRadius: 24,
     overflow: "hidden", // definir overflow para a imagem ficar dentro do container
-    
+    borderWidth: 0.1
   },
   title: {
     fontSize: 16,

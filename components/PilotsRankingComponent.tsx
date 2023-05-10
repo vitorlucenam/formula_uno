@@ -23,7 +23,6 @@ const Item = ({title, pilotUrl}: ItemProps) => (
       }}
       imageStyle={{ borderRadius: 6}}
     >
-      <Text style={styles.title}>{title}</Text>
     </ImageBackground>
   </View>
 );
@@ -79,18 +78,18 @@ const styles = StyleSheet.create({
     flexDirection: 'row', 
     flexWrap: 'wrap', 
     alignItems: 'flex-start',
-    backgroundColor: 'black',
-    marginTop:8,
+    backgroundColor: '#CFD8DC'
 
   },
   item: {
-    backgroundColor: 'steelblue',
+    backgroundColor: '#DD2C00',
     marginVertical: 8,
     marginHorizontal: 8,
     width: 80,
     height: 80,
-    borderRadius: 20,
+    borderRadius: 24,
     overflow: "hidden", // definir overflow para a imagem ficar dentro do container
+    borderWidth: 1
     
   },
   title: {
