@@ -79,6 +79,7 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap', 
     alignItems: 'flex-start',
     backgroundColor: '#CFD8DC',
+    
   },
   item: {
     backgroundColor: '#ECEFF1',
@@ -88,7 +89,7 @@ const styles = StyleSheet.create({
     height: 100,
     borderRadius: 24,
     overflow: "hidden", // definir overflow para a imagem ficar dentro do container
-    borderWidth: 0.1
+    borderWidth: 0.1,
   },
   title: {
     fontSize: 16,
